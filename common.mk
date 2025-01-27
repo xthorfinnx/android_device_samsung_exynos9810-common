@@ -14,7 +14,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
-    hardware/samsung/aidl/power-libperfmgr
+    hardware/samsung/aidl/power-libperfmgr \
+    hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay
@@ -85,8 +86,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
-    gralloc.exynos9810 \
-    libion
+    gralloc.universal9810
 
 # DRM
 PRODUCT_PACKAGES += \
