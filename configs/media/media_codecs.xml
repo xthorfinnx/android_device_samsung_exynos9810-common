@@ -78,6 +78,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <MediaCodecs>
+    <Include href="media_codecs_dolby_audio.xml" />
     <Settings>
         <Setting name="supports-multiple-secure-codecs" value="true" />
         <Setting name="supports-secure-with-non-secure-codec" value="true" />

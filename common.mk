@@ -34,9 +34,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libprocessgroup.vendor
 
-PRODUCT_PACKAGES += \
-    SamsungDAP
-
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
@@ -317,6 +314,13 @@ PRODUCT_PACKAGES += \
     libsec-ril-dsds \
     libshim_audioparams \
     libshim_sensorndkbridge
+
+# Sony Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
+TARGET_INCLUDES_DolbyVision := false
+
+PRODUCT_PACKAGES += \
+    LunarisDolby
 
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
