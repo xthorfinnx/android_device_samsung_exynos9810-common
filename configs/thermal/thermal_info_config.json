@@ -5,45 +5,87 @@
             "Type": "CPU",
             "HotThreshold": [
                 "NAN",
-                "NAN",
-                "NAN",
-                96.0,
-                "NAN",
-                "NAN",
+                78.0,
+                83.0,
+                90.0,
+                100.0,
+                110.0,
                 115.0
             ],
             "VrThreshold": "NAN",
-            "Multiplier": 0.001
+            "Multiplier": 0.001,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-1",
+                    "LimitInfo": [
+                        0,
+                        0,
+                        0,
+                        8,
+                        11,
+                        13,
+                        14
+                    ]
+                }
+            ]
         },
         {
             "Name": "LITTLE",
             "Type": "CPU",
             "HotThreshold": [
                 "NAN",
-                "NAN",
-                "NAN",
-                96.0,
-                "NAN",
-                "NAN",
+                76.0,
+                81.0,
+                91.0,
+                101.0,
+                110.0,
                 115.0
             ],
             "VrThreshold": "NAN",
-            "Multiplier": 0.001
+            "Multiplier": 0.001,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-0",
+                    "LimitInfo": [
+                        0,
+                        0,
+                        2,
+                        4,
+                        6,
+                        8,
+                        10
+                    ]
+                }
+            ]
         },
         {
             "Name": "G3D",
             "Type": "GPU",
             "HotThreshold": [
                 "NAN",
-                "NAN",
-                "NAN",
-                96.0,
-                "NAN",
-                "NAN",
+                80.0,
+                88.0,
+                95.0,
+                105.0,
+                110.0,
                 115.0
             ],
             "VrThreshold": "NAN",
-            "Multiplier": 0.001
+            "Multiplier": 0.001,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "LimitInfo": [
+                        0,
+                        0,
+                        0,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]
+                }
+            ]
         },
         {
             "Name": "ISP",
@@ -51,14 +93,28 @@
             "HotThreshold": [
                 "NAN",
                 "NAN",
-                "NAN",
-                96.0,
-                "NAN",
-                "NAN",
+                95.0,
+                100.0,
+                110.0,
+                114.0,
                 115.0
             ],
             "VrThreshold": "NAN",
-            "Multiplier": 0.001
+            "Multiplier": 0.001,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-isp-0",
+                    "LimitInfo": [
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        2,
+                        2
+                    ]
+                }
+            ]
         },
         {
             "Name": "ac",
@@ -91,10 +147,10 @@
             "HotThreshold": [
                 "NAN",
                 "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                41.0,
+                45.0,
+                50.0,
+                55.0,
                 60.0
             ],
             "VrThreshold": "NAN",
