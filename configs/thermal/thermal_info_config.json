@@ -155,6 +155,45 @@
             ],
             "VrThreshold": "NAN",
             "Multiplier": 0.001
+        },
+        {
+            "Name": "skin",
+            "Type": "SKIN",
+            "VirtualSensor": true,
+            "Combination": [
+                "battery",
+                "ac",
+                "BIG"
+            ],
+            "Coefficient": [
+                0.7,
+                0.2,
+                0.1
+            ],
+            "Formula": "WEIGHTED_AVG",
+            "HotThreshold": [
+                "NAN",
+                37.0,
+                40.0,
+                43.0,
+                46.0,
+                50.0,
+                "NAN"
+            ],
+            "HotHysteresis": [
+                0.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                0.0
+            ],
+            "VrThreshold": "NAN",
+            "Multiplier": 0.001,
+            "Monitor": true,
+            "PollingDelay": 2000,
+            "PassiveDelay": 3000
         }
     ],
     "CoolingDevices": [
