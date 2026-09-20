@@ -1021,3 +1021,15 @@ on init
     write /dev/cpuctl/top-app/cpu.uclamp.min 0
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+
+# Let the thermal HAL apply its cooling-device requests. The symlinks
+# service sets link_ready once /dev/thermal/cdev-by-name/* exist.
+on property:vendor.thermal.link_ready=1
+    chown system system /dev/thermal/cdev-by-name/thermal-cpufreq-0/cur_state
+    chmod 0660 /dev/thermal/cdev-by-name/thermal-cpufreq-0/cur_state
+    chown system system /dev/thermal/cdev-by-name/thermal-cpufreq-1/cur_state
+    chmod 0660 /dev/thermal/cdev-by-name/thermal-cpufreq-1/cur_state
+    chown system system /dev/thermal/cdev-by-name/thermal-gpufreq-0/cur_state
+    chmod 0660 /dev/thermal/cdev-by-name/thermal-gpufreq-0/cur_state
+    chown system system /dev/thermal/cdev-by-name/thermal-isp-0/cur_state
+    chmod 0660 /dev/thermal/cdev-by-name/thermal-isp-0/cur_state
