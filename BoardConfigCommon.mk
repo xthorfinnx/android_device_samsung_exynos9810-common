@@ -49,12 +49,17 @@ BOARD_MKBOOTIMG_ARGS := --header_version 0 \
 $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 $(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
 
+# Compression
+BOARD_EROFS_COMPRESSOR := lz4hc,9
+BOARD_EROFS_PCLUSTER_SIZE := 16384
+
 # Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_ODM := vendor/odm
