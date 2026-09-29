@@ -1,0 +1,13 @@
+# mkfs.erofs --compress-hints
+#
+# <pcluster-size-in-bytes> [algorithm-index] <extended-regex-match-pattern>
+#
+# A pcluster size of 0 tells mkfs.erofs not to compress matching files.
+# These are already internally compressed (or effectively incompressible),
+# so LZ4HC spends CPU for little to no size benefit, and a needlessly
+# compressed block costs decompression CPU/battery on every future read.
+0 \.(jpg|jpeg|png|webp|gif|bmp)$
+0 \.(mp3|ogg|opus|flac|m4a|aac|wav)$
+0 \.(mp4|mkv|webm|3gp|ts)$
+0 \.(zip|jar|apk|gz|xz|zst|7z)$
+0 \.(ttf|otf|woff|woff2)$
