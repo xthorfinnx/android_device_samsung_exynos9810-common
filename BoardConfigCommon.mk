@@ -52,6 +52,8 @@ $(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
 # Compression
 BOARD_EROFS_COMPRESSOR := lz4hc,9
 BOARD_EROFS_PCLUSTER_SIZE := 16384
+BOARD_EROFS_SHARE_DUP_BLOCKS := true
+BOARD_EROFS_COMPRESS_HINTS := device/samsung/exynos9810-common/configs/erofs/compress_hints.txt
 
 # Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
