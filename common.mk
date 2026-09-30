@@ -285,6 +285,9 @@ TARGET_DOZE_SIDE_FPS_PULSE_SUPPORTED := false
 TARGET_INCLUDES_LOS_PREBUILTS := false
 TARGET_INCLUDE_AXFX := false
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/kernel/ax_kernel_manager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_kernel_manager.xml
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr

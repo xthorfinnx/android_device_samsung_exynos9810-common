@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kernel-manager>
+    <cpu
+        id="little"
+        group="Little Cluster"
+        cpuIds="0-3"
+        minId="axion_min_freq"
+        maxId="axion_max_freq"
+        governorId="little_cpu_governor"
+        node="/sys/devices/system/cpu/cpufreq/policy0" />
+
+    <cpu
+        id="big"
+        group="Big Cluster"
+        cpuIds="4-7"
+        minId="axion_min_freq_big"
+        maxId="axion_max_freq_big"
+        governorId="big_cpu_governor"
+        node="/sys/devices/system/cpu/cpufreq/policy4" />
+
+    <gpu
+        node="/sys/kernel/gpu"
+        minNode="/sys/kernel/gpu/gpu_min_clock"
+        maxNode="/sys/kernel/gpu/gpu_max_clock"
+        currentNode="/sys/kernel/gpu/gpu_clock"
+        usageNode="/sys/kernel/gpu/gpu_busy"
+        availablePath="/sys/kernel/gpu/gpu_freq_table"
+        frequencyMultiplier="1000" />
+</kernel-manager>
