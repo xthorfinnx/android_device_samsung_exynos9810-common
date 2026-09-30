@@ -1,3 +1,7 @@
 # Copyright (C) 2022 The LineageOS Project
 
 allow system_server sysfs_extcon:file r_file_perms;
+
+# Ax Kernel Manager
+allow system_server sysfs_devices_system_cpu:file rw_file_perms;
+allow system_server sysfs_gpu_writable:file rw_file_perms;
