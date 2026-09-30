@@ -273,6 +273,18 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# AxionOS
+TARGET_DISABLES_LIBPERF := false
+HBM_SUPPORTED := false
+BYPASS_CHARGE_SUPPORTED := false
+TARGET_NEEDS_DOZE_FIX := false
+TARGET_DOZE_TAP_PULSE_SUPPORTED := false
+TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED := false
+TARGET_DOZE_PICKUP_PULSE_SUPPORTED := false
+TARGET_DOZE_SIDE_FPS_PULSE_SUPPORTED := false
+TARGET_INCLUDES_LOS_PREBUILTS := false
+TARGET_INCLUDE_AXFX := false
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr
