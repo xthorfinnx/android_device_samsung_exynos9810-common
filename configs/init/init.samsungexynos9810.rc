@@ -2,6 +2,11 @@
 
 import /vendor/etc/init/hw/init.samsung.rc
 
+on early-init
+    # The Mali Vulkan driver breaks blur and animations; render with GL
+    setprop debug.renderengine.backend skiagl
+    setprop debug.hwui.renderer skiagl
+
 on init
     #Reactivation Lock
     symlink /dev/block/platform/11120000.ufs/by-name/STEADY /dev/block/steady
