@@ -245,6 +245,20 @@ on init
     chmod 0660 /sys/kernel/gpu/gpu_min_clock
     chmod 0660 /sys/kernel/gpu/gpu_max_clock
 
+    #Permission for AxDragonite
+    chown system system /proc/ax_named_thread_affinity/pid
+    chown system system /proc/ax_named_thread_affinity/named_thread_affinity
+    chown system system /proc/ax_named_thread_affinity/reset
+    chown system system /proc/ax_dragonite/boost
+    chown system system /proc/ax_dragonite/kswapd_pin
+    chown system system /proc/ax_dragonite/stats
+    chmod 0664 /proc/ax_named_thread_affinity/pid
+    chmod 0664 /proc/ax_named_thread_affinity/named_thread_affinity
+    chmod 0664 /proc/ax_named_thread_affinity/reset
+    chmod 0664 /proc/ax_dragonite/boost
+    chmod 0664 /proc/ax_dragonite/kswapd_pin
+    chmod 0444 /proc/ax_dragonite/stats
+
     #Permission for ERT
     chown system system /sys/kernel/ert/boost_frt_threshold
     chown system system /sys/kernel/ert/rt_ratio_for_freq
