@@ -2,6 +2,8 @@
 
 # Proc
 genfscon proc /sys/vm/swappiness u:object_r:proc_swappiness:s0
+genfscon proc /sys/vm/vfs_cache_pressure u:object_r:proc_drop_caches:s0
+genfscon proc /sys/vm/dirty_ratio u:object_r:proc_dirty:s0
 
 # BBD
 genfscon sysfs /bbd/lk_enable u:object_r:sysfs_bbd_writable:s0
