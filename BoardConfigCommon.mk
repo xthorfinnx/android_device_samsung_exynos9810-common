@@ -50,18 +50,26 @@ $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 $(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
 
 # Compression
+ifeq ($(TARGET_USES_EROFS),true)
 BOARD_EROFS_COMPRESSOR := lz4hc,9
 BOARD_EROFS_PCLUSTER_SIZE := 16384
 BOARD_EROFS_SHARE_DUP_BLOCKS := true
 BOARD_EROFS_COMPRESS_HINTS := device/samsung/exynos9810-common/configs/erofs/compress_hints.txt
+endif
 
 # Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 
 # Filesystem
+# Set TARGET_USES_EROFS := true to build /system and /vendor as EROFS
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+ifeq ($(TARGET_USES_EROFS),true)
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+else
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+endif
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_ODM := vendor/odm
