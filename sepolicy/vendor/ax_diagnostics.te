@@ -1,0 +1,5 @@
+# Copyright (C) 2026 The LineageOS Project
+
+allow ax_diagnostics sysfs_battery:dir r_dir_perms;
+allow ax_diagnostics sysfs_battery:file r_file_perms;
+allow ax_diagnostics sysfs_devices_block:dir search;
