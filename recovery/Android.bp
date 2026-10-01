@@ -1,0 +1,17 @@
+// Copyright (C) 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+cc_library_static {
+    name: "librecovery_ui_exynos9810",
+    srcs: ["recovery_ui.cpp"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+    ],
+    shared_libs: [
+        "libbase",
+        "librecovery_ui",
+    ],
+    recovery: true,
+}
