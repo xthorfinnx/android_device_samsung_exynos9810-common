@@ -88,4 +88,9 @@
 
     <!-- Whether the device supports wireless charging or not -->
     <bool name="config_deviceSupportsWirelessCharging">true</bool>
+
+    <!-- Charging control: on by default, limit mode, stop at 100% -->
+    <bool name="config_chargingControlEnabled">true</bool>
+    <integer name="config_defaultChargingControlMode">3</integer>
+    <integer name="config_defaultChargingControlLimit">100</integer>
 </resources>
